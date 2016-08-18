@@ -1,5 +1,6 @@
 # Instructions:
-# The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
+# The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. 
+# The goal is to prepare tidy data that can be used for later analysis.
 ##########################################################################################################
 
 # Review criteria:
@@ -89,7 +90,7 @@ colnames(final_data_ActivityNames) = colNames;
 # Making second tidy data set
 tidy_data <- final_data_ActivityNames[,names(final_data_ActivityNames) != 'activityType'];
 tidy_data <- aggregate(tidy_data[,names(tidy_data) != c('activityId','subjectId')],by=list(activityId=tidy_data$activityId,subjectId = tidy_data$subjectId),mean);
-tidy_data <- merge(tidy_data,activityType,by='activityId',all.x=TRUE);
+tidy_data <- merge(tidy_data,activity_labels,by='activityId',all.x=TRUE);
 
 # Export the tidy_data set 
 write.table(tidy_data, './tidy_data.txt',row.names=TRUE,sep='\t')
