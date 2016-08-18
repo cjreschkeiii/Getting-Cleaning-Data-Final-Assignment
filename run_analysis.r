@@ -83,7 +83,7 @@ for (i in 1:length(colNames))
     colNames[i] <- gsub("GyroMag","GyroMagnitude",colNames[i])
 };
 
-# Reassigning the new descriptive column names to the finalData set
+# Reassign the new descriptive column names to the data set
 colnames(final_data_ActivityNames) = colNames;
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
